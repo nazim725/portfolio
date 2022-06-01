@@ -1,0 +1,13 @@
+.award_container{
+    padding: 20px;
+}
+
+.single_award{
+    background: #132347;
+    padding: 10px;
+}
+.award_title{
+    font-weight: 400;
+    color: #fff;
+    opacity: 70;
+}

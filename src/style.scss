@@ -1,0 +1,92 @@
+$yellow:#0b82a0;    //variable declare kora
+
+@mixin border-radius($radius) {         //ekane declare kore raka pore includes dia use korbe
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $top $left $blur $color;
+		-moz-box-shadow:inset $top $left $blur $color;
+		-o-box-shadow:inset $top $left $blur $color;
+		box-shadow:inset $top $left $blur $color;
+	} @else {
+		-webkit-box-shadow: $top $left $blur $color;
+		-moz-box-shadow: $top $left $blur $color;
+		-o-box-shadow: $top $left $blur $color;
+		box-shadow: $top $left $blur $color;
+	}
+}
+
+@mixin clip-path($clip) {
+	-webkit-clip-path: $clip;
+	-moz-clip-path: $clip;
+	-ms-clip-path: $clip;
+	clip-path: $clip;
+}
+
+@mixin transition($transition) {
+	-moz-transition:    all $transition ease;
+	-o-transition:      all $transition ease;
+	-webkit-transition: all $transition ease;
+	-ms-transition: 	all $transition ease;
+	transition:         all $transition ease;
+}
+
+.paddding {
+	padding-left: 0!important;
+	padding-right: 0!important;
+}
+// header
+
+// Header
+
+.navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.active {
+	color: rgb(9, 9, 211)!important;
+	padding-top: 12px!important;
+	padding-bottom: 15px!important;
+	padding-left: 20px!important;
+	padding-right: 20px!important;
+	margin: 0 20px!important;
+	@include transition(0.5s);
+	background: $yellow!important;
+	@include clip-path(polygon(100% 0, 100% 85%, 14% 85%, 0 100%, 0% 60%, 0 0));
+}
+.navbar-light .navbar-nav .nav-link {
+	color: rgb(11, 173, 179)!important;
+	padding-top: 12px!important;
+	padding-bottom: 15px!important;
+	padding-left: 20px!important;
+	padding-right: 20px!important;
+	margin: 0 20px!important;
+	@include transition(0.5s);
+	position: relative!important;
+	@include clip-path(polygon(100% 0, 100% 85%, 14% 85%, 0 100%, 0% 60%, 0 0));
+
+	&:focus, &:hover {
+		background: $yellow!important;
+		color: #fff!important;
+		padding-top: 12px!important;
+		padding-bottom: 15px!important;
+		padding-left: 20px!important;
+		padding-right: 20px!important;
+		margin: 0 20px;
+		position: relative;
+	}
+}
+
+.bg-faded {
+    background-color: #0e1b31;
+  }
+
+.mobile_logo_width {
+	display: none;
+}
+
+.navbar-nav {
+ flex-direction: row !important;
+ cursor: pointer;   
+}
