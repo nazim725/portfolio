@@ -1,0 +1,7 @@
+.details-img {
+  border-radius: 10px;
+  border: 5px solid rgb(14, 221, 221);
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px,
+    rgb(19, 255, 125) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 85, 85) 0px 0px 0px 15px;
+}

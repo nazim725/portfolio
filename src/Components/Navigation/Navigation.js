@@ -4,7 +4,7 @@ import transitions from 'bootstrap'
 
 const Navigation = ({ setActive, active }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid bg-faded padding-media">
         <div className="container padding-media">
           <nav className="navbar navbar-toggleable.md navbar-light">

@@ -56,7 +56,8 @@
   color: #fff;
 }
 
-/* .header_shrink {
+.header_shrink {
   background: #132347;
   box-shadow: 2px 2px 4px -2px #7765ffb6;
-} */
+  padding-bottom: 10px;
+}

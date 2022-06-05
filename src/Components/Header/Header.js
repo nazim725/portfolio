@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
-import "./Header.css"
+import './Header.css'
 
 const navLinks = [
   { display: 'Home', url: '#home' },
@@ -11,8 +11,37 @@ const navLinks = [
 ]
 
 const Header = () => {
+  const headerRef = useRef(null)
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        headerRef.current.classList.add('header_shrink')
+      } else {
+        headerRef.current.classList.remove('header_shrink')
+      }
+    })
+
+    // return () => {
+    //   window.removeEventListener('scroll')
+    // }
+  }, [])
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    const targetAttr = e.target.getAttribute('href')
+    const location = document.querySelector(targetAttr).offsetTop
+
+    window.scrollTo({
+      left: 0,
+      top: location - 70,
+    })
+  }
   return (
-    <div className='header_wrapper'>
+    <div className="header_wrapper fixed-top" ref={headerRef}>
       <Container>
         <div className="navigation d-flex align-items-center justify-content-between">
           <div className="logo">
@@ -22,7 +51,9 @@ const Header = () => {
             <ul className="nav_list">
               {navLinks.map((item, index) => (
                 <li className="nav_item" key={index}>
-                  <a href={item.url}>{item.display}</a>
+                  <a href={item.url} onClick={handleClick}>
+                    {item.display}
+                  </a>
                 </li>
               ))}
             </ul>
