@@ -23,3 +23,14 @@
 .skill_title span {
   color: #fff;
 }
+
+/* resposive */
+
+@media only screen and (max-width: 992px) {
+  .skill_title h6 {
+    font-size: 0.8rem;
+  }
+  .skill_title span {
+    font-size: 0.7rem;
+  }
+}

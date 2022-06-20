@@ -25,7 +25,7 @@ const Navigation = ({ setActive, active }) => {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to="/#home" style={{ textDecoration: 'none' }}>
                   <li
                     className={`nav-item nav-link ${
                       active === 'home' ? 'active' : ''
@@ -35,7 +35,7 @@ const Navigation = ({ setActive, active }) => {
                     Home
                   </li>
                 </Link>
-                <Link to="/#about" style={{ textDecoration: 'none' }}>
+                <Link to="#about" style={{ textDecoration: 'none' }}>
                   <li
                     className={`nav-item nav-link ${
                       active === 'about' ? 'active' : ''

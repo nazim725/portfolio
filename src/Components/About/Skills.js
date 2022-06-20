@@ -1,5 +1,6 @@
 import React from 'react'
 import './Skills.css'
+import Fade from 'react-reveal/Fade'
 
 const frontendSkills = [
   {
@@ -51,18 +52,18 @@ const backendSkills = [
   },
   {
     title: 'MongoDB',
-    width: '80%',
-    percentage: '80%',
+    width: '85%',
+    percentage: '85%',
   },
   {
     title: 'Socket.io',
-    width: '80%',
-    percentage: '80%',
+    width: '40%',
+    percentage: '40%',
   },
   {
     title: 'SQL',
-    width: '80%',
-    percentage: '80%',
+    width: '70%',
+    percentage: '70%',
   },
   {
     title: 'Firebase',
@@ -73,44 +74,46 @@ const backendSkills = [
 
 const Skills = () => {
   return (
-    <div className="skills_wrapper d-flex gap-5">
-      <div className="frontend_skills w-50">
-        <h4 className="fw-bold">Frontend Technology</h4>
-        <hr className="text-info fw-bold " />
-        {frontendSkills.map((item, index) => (
-          <div className="skill_data mb-2">
-            <div className="skill_title d-flex align-items-center justify-content-between">
-              <h6>{item.title}</h6>
-              <span>{item.percentage}</span>
+    <Fade right>
+      <div className="skills_wrapper d-flex gap-5">
+        <div className="frontend_skills w-50">
+          <h4 className="fw-bold">Frontend Technology</h4>
+          <hr className="text-info fw-bold " />
+          {frontendSkills.map((item, index) => (
+            <div className="skill_data mb-2">
+              <div className="skill_title d-flex align-items-center justify-content-between">
+                <h6>{item.title}</h6>
+                <span>{item.percentage}</span>
+              </div>
+              <div className="skill_bar">
+                <span
+                  className="skill_bar-percentage"
+                  style={{ width: `${item.percentage}` }}
+                ></span>
+              </div>
             </div>
-            <div className="skill_bar">
-              <span
-                className="skill_bar-percentage"
-                style={{ width: `${item.percentage}` }}
-              ></span>
+          ))}
+        </div>
+        <div className="backend_skills w-50">
+          <h4 className="fw-bold">Backend Technology</h4>
+          <hr className="text-info fw-bold " />
+          {backendSkills.map((item, index) => (
+            <div className="skill_data mb-2">
+              <div className="skill_title d-flex align-items-center justify-content-between">
+                <h6>{item.title}</h6>
+                <span>{item.percentage}</span>
+              </div>
+              <div className="skill_bar">
+                <span
+                  className="skill_bar-percentage"
+                  style={{ width: `${item.percentage}` }}
+                ></span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-      <div className="backend_skills w-50">
-        <h4 className="fw-bold">Backend Technology</h4>
-        <hr className="text-info fw-bold " />
-        {backendSkills.map((item, index) => (
-          <div className="skill_data mb-2">
-            <div className="skill_title d-flex align-items-center justify-content-between">
-              <h6>{item.title}</h6>
-              <span>{item.percentage}</span>
-            </div>
-            <div className="skill_bar">
-              <span
-                className="skill_bar-percentage"
-                style={{ width: `${item.percentage}` }}
-              ></span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    </Fade>
   )
 }
 

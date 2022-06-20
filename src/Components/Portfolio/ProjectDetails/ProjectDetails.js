@@ -18,6 +18,8 @@ const ProjectDetails = () => {
         console.log(data)
       })
   }, [projectId])
+
+  console.log('tech', project.technology)
   return (
     <div className="pb-5">
       <Navigation />
@@ -31,34 +33,61 @@ const ProjectDetails = () => {
           <p className="text-info description" style={{ letterSpacing: '2px' }}>
             {project.description}
           </p>
-
           <div>
+            <h2 className="my-3 fw-bold text-warning">Technologies</h2>
+            {project.technology?.map((tech) => (
+              <div className="technology">
+                {' '}
+                <button className="tec-button">{tech.name}</button>
+              </div>
+            ))}
+          </div>
+
+          <div className="link-div">
             <a target="_blank" href={project.liveLink}>
-              <button className="btn btn-success mt-3 mb-3">
-                Live Site Link
-              </button>
+              <button className="tec-button">Live Site Link</button>
             </a>
             <a target="_blank" href={project.clientLink}>
-              <button className="btn btn-success ms-3 mt-3 mb-3">
-                Client Site Link
-              </button>
+              <button className="tec-button">Client Site Link</button>
             </a>
             <a target="_blank" href={project.serverLink}>
-              <button className="btn btn-success ms-3 mt-3 mb-3">
-                Server Site Link
-              </button>
+              <button className="tec-button">Server Site Link</button>
             </a>
           </div>
         </Row>
         <Row>
           <Col sm={12} md={4} lg={4} className="mt-4">
-            <img src={project.img2} alt="" width="100%" height="100%" className='details-img'/>
+            <div className='d-img'>
+              <img
+                src={project.img2}
+                alt=""
+                width="100%"
+                height="100%"
+                className="details-img"
+              />
+            </div>
           </Col>
           <Col sm={12} md={4} lg={4} className="mt-4">
-            <img src={project.img1} alt="" width="100%" height="100%"  className='details-img ms-4'/>
+            <div className='d-img'>
+              <img
+                src={project.img1}
+                alt=""
+                width="100%"
+                height="100%"
+                className="details-img"
+              />
+            </div>
           </Col>
           <Col sm={12} md={4} lg={4} className="mt-4">
-            <img src={project.img3} alt="" width="100%" height="100%"  className='details-img ms-5'/>
+            <div className="d-img">
+              <img
+                src={project.img3}
+                alt=""
+                width="100%"
+                height="100%"
+                className="details-img"
+              />
+            </div>
           </Col>
         </Row>
       </Container>

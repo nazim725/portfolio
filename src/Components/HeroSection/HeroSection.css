@@ -124,3 +124,40 @@
   text-decoration: none;
   transition: 0.5s;
 }
+
+/* ----------------------------responsive */
+@media only screen and (max-width: 992px) {
+  .hero_img {
+    width: 270px;
+    height: 270px;
+  }
+
+  .hero_content p {
+    font-size: 0.8rem;
+  }
+
+  .hero_btns button {
+    display: block;
+    padding: 5px 20px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hero_img {
+    width: 230px;
+    height: 230px;
+    margin-right: 160px;
+    /* margin: auto; */
+
+    margin-bottom: 70px;
+    margin-top: 30px;
+  }
+
+  .hero_content {
+    margin-bottom: 5px;
+  }
+  .her_title {
+    font-size: 1.5rem;
+  }
+}

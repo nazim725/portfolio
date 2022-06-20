@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 const navLinks = [
   { display: 'Home', url: '#home' },
@@ -10,8 +11,9 @@ const navLinks = [
   { display: 'Contact', url: '#contact' },
 ]
 
-const Header = () => {
+const Header = ({ modalShow, setModalShow }) => {
   const headerRef = useRef(null)
+  const menuRef = useRef(null)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -30,6 +32,8 @@ const Header = () => {
     // }
   }, [])
 
+  const menuToggle = () => menuRef.current.classList.toggle('menu_active')
+
   const handleClick = (e) => {
     e.preventDefault()
     const targetAttr = e.target.getAttribute('href')
@@ -40,14 +44,19 @@ const Header = () => {
       top: location - 70,
     })
   }
+
   return (
-    <div className="header_wrapper fixed-top" ref={headerRef}>
+    <div
+      className="header_wrapper fixed-top"
+      ref={headerRef}
+      onClick={menuToggle}
+    >
       <Container>
         <div className="navigation d-flex align-items-center justify-content-between">
           <div className="logo">
             <h5>Nazim Uddin</h5>
           </div>
-          <div className="nav_menu">
+          <div className="nav_menu " ref={menuRef}>
             <ul className="nav_list">
               {navLinks.map((item, index) => (
                 <li className="nav_item" key={index}>
@@ -60,9 +69,14 @@ const Header = () => {
           </div>
 
           <div className="nav-right d-flex align-items-center gap-4">
-            <button className="btn">Let's Talk</button>
+            {/* <button className="btn">
+              <Link to="/contactModal">Let's Talk</Link>
+            </button> */}
+            <button className="btn" variant="primary" onClick={() => setModalShow(true)}>
+              Let's Talk
+            </button>
             <span className="mobile_menu">
-              <i class="ri-menu-5-line"></i>
+              <i class="ri-menu-5-line" onClick={menuToggle}></i>
             </span>
           </div>
         </div>

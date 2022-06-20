@@ -43,3 +43,34 @@
   border-radius: 10px;
   height: 200px;
 }
+.contact-with {
+  background: #13095ec5;
+  padding: 10px;
+  width: 30%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* resoponsive */
+
+@media only screen and (max-width: 992px) {
+  .about_btn {
+    padding: 10px 25px;
+    font-size: 0.8rem;
+  }
+  .about_content h2 {
+    font-size: 1.5rem;
+  }
+  .about_content p {
+    font-size: 0.9rem;
+    line-height: 28px;
+  }
+  .about_btns {
+    margin-bottom: 40px;
+  }
+  .about_img {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+}
